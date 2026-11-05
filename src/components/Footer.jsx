@@ -1,0 +1,112 @@
+import { Link } from "react-router-dom";
+
+const Footer = () => {
+  const github =
+    import.meta.env.VITE_GITHUB_URL || "https://github.com/fahim-5";
+  const linkedin =
+    import.meta.env.VITE_LINKEDIN_URL ||
+    "https://www.linkedin.com/in/fahim-bafu/";
+  const facebook =
+    import.meta.env.VITE_FACEBOOK_URL || "https://www.facebook.com/fahimbafu";
+
+  return (
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div className="space-y-8 xl:col-span-1">
+            <Link to="/" className="flex items-center">
+              <div className="h-8 w-8 bg-primary-600 rounded-lg"></div>
+              <span className="ml-2 text-xl font-bold">
+                Micro-Task and Earning Platform
+              </span>
+            </Link>
+            <p className="text-gray-400 text-base">
+              Connect Buyers and Workers: create tasks, complete micro-jobs, and
+              securely earn and withdraw coins.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                  Company
+                </h3>
+                <ul className="mt-4 space-y-4">
+                  <li>
+                    <a
+                      href="/about"
+                      className="text-base text-gray-300 hover:text-white"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/terms"
+                      className="text-base text-gray-300 hover:text-white"
+                    >
+                      Terms
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/privacy"
+                      className="text-base text-gray-300 hover:text-white"
+                    >
+                      Privacy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-12 md:mt-0">
+                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                  Connect
+                </h3>
+                <ul className="mt-4 space-y-4">
+                  <li>
+                    <a
+                      href={linkedin}
+                      className="text-base text-gray-300 hover:text-white"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={facebook}
+                      className="text-base text-gray-300 hover:text-white"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={github}
+                      className="text-base text-gray-300 hover:text-white"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-12 border-t border-gray-700 pt-8">
+          <p className="text-base text-gray-400 xl:text-center">
+            &copy; {new Date().getFullYear()} Micro-Task and Earning Platform.
+            All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
